@@ -69,7 +69,7 @@ export default function StudySessionsPage() {
     <div className="flex min-h-screen bg-gray-50">
       <Sidebar active="Study Sessions" />
       <main className="flex-1 p-8 max-w-4xl mx-auto">
-        <h2 className="text-2xl font-semibold mb-2">Study Sessions</h2>
+        <h2 className="text-2xl font-semibold mb-2 text-black">Study Sessions</h2>
         <p className="text-black mb-8">
           Focus, break, or vibe — your timer keeps running in the background.
         </p>
