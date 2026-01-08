@@ -43,3 +43,17 @@ The `api` folder was created to address the following challenges:
    - **Solution**: Ensure the `api/visits` route is functioning and the database is properly connected.
 
 By addressing these issues, the `api` folder ensures the application runs smoothly and provides a seamless user experience.
+
+## Project Reflection
+
+### What went well
+
+### What didn’t go well
+- Adding an AI page to process files
+
+### What you changed during the project and why
+- Changed the research page to a page where you talk with AI about certain topics. This was changed due to limited time and how it slowed production of the full application.
+
+### What you’d build next if you had more time
+- I would build a more in-depth study application that sends notifications to your email and can be downloaded on your phone to use.
+- A Task Tracker feature to manage tasks, which was planned but could not be implemented due to production constraints.

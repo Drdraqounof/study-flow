@@ -1,20 +1,22 @@
 # StudyFlow
 
 ## Project Overview
-StudyFlow is a productivity app designed to help students improve focus, organization, and time management. It provides tools like a focus timer, task management, and AI-powered research assistance to enhance study efficiency.
+StudyFlow is a productivity app designed to help students improve focus, organization, and time management. It provides tools like a focus timer and AI-powered research assistance to enhance study efficiency.
 
 ## Problem Summary
 Students often struggle with managing their time effectively, staying focused, and organizing their study materials. StudyFlow addresses these challenges by offering a centralized platform with tools tailored to student needs.
 
 ## Features
 - **Focus Timer**: Implements the Pomodoro technique to help students study in focused intervals.
-- **Task Management**: Organize assignments and track deadlines.
 - **Progress Tracking**: Visualize study patterns and time spent on each subject.
 - **AI Integration**: 
   - Summarizes uploaded documents and images.
   - Provides explanations and answers questions about study materials.
 - **User Authentication**: Secure login and signup functionality.
 - **File Uploads**: Upload study materials for AI analysis.
+
+## Future Enhancements
+- **Task Tracker**: A feature to manage tasks and deadlines, which was planned but could not be implemented due to production constraints.
 
 ## Tech Stack
 - **Framework**: Next.js 16 (App Router, Server Actions)

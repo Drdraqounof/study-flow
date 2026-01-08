@@ -8,7 +8,7 @@ const navItems = [
 	{ icon: <Notebook />, label: "Notes", href: "/notes" },
 	{ icon: <Search />, label: "Research", href: "/research" },
 	{ icon: <Clock />, label: "Study Sessions", href: "/study-sessions" },
-];
+]; // Removed Task Tracker
 
 export default function Sidebar({ active }: { active?: string }) {
 	const [isAdmin, setIsAdmin] = useState(false);
