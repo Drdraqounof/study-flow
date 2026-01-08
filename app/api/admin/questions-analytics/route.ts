@@ -13,7 +13,7 @@ export async function GET() {
   ];
 
   // Aggregate counts for each question and answer
-  const results = {};
+  const results: { [key: string]: { Yes: number; No: number } } = {};
   for (const question of questions) {
     const yesCount = await prisma.questionsLog.count({ where: { question, answer: 'Yes' } });
     const noCount = await prisma.questionsLog.count({ where: { question, answer: 'No' } });
