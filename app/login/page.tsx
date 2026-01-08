@@ -132,7 +132,7 @@ export default function LoginPage() {
               placeholder="you@example.com"
               required
               disabled={isLoading}
-              style={{ padding: 10, borderRadius: 6, border: '1px solid #e5e7eb', marginBottom: 8 }}
+              style={{ padding: 10, borderRadius: 6, border: '1px solid #e5e7eb', marginBottom: 8, color: '#000' }}
             />
             <label htmlFor="login-password" style={{ fontWeight: 500, color: '#000' }}>Password</label>
             <input
@@ -143,7 +143,7 @@ export default function LoginPage() {
               placeholder="Your password"
               required
               disabled={isLoading}
-              style={{ padding: 10, borderRadius: 6, border: '1px solid #e5e7eb', marginBottom: 8 }}
+              style={{ padding: 10, borderRadius: 6, border: '1px solid #e5e7eb', marginBottom: 8, color: '#000' }}
             />
             {/* Removed teacher code input from login */}
             <button
@@ -154,7 +154,7 @@ export default function LoginPage() {
               {isLoading ? 'Logging in...' : 'Login'}
             </button>
           </form>
-          <div style={{ marginTop: 24, textAlign: 'center', fontSize: 14 }}>
+          <div style={{ marginTop: 24, textAlign: 'center', fontSize: 14, color: '#000' }}>
             Don&apos;t have an account?{' '}
             <a href="#" style={{ color: '#000', textDecoration: 'underline', cursor: 'pointer' }} onClick={() => { setMode('signup'); setEmail(''); setPassword(''); setError(''); }}>Sign up</a>
           </div>

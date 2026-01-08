@@ -30,60 +30,60 @@ export default function QuestionsPage() {
       {/* <Sidebar active="Questions" /> */}
       <main className="flex-1 p-8 flex flex-col items-center justify-center">
         <div className="bg-white rounded-xl shadow-sm border p-8 max-w-md w-full">
-          <h2 className="text-2xl font-semibold mb-6 text-center">Quick Questions</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-center text-black">Quick Questions</h2>
           {!submitted ? (
             <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               <div>
-                <label htmlFor="study-challenges" className="font-medium mb-2 block">
+                <label htmlFor="study-challenges" className="font-medium mb-2 block text-black">
                   Do you find it challenging to manage your time effectively?
                 </label>
                 <div className="flex gap-4">
-                  <label className="flex items-center gap-2">
+                  <label className="flex items-center gap-2 text-black">
                     <input type="radio" name="study-challenges" value="yes" required /> Yes
                   </label>
-                  <label className="flex items-center gap-2">
+                  <label className="flex items-center gap-2 text-black">
                     <input type="radio" name="study-challenges" value="no" required /> No
                   </label>
                 </div>
               </div>
 
               <div>
-                <label htmlFor="organize-materials" className="font-medium mb-2 block">
+                <label htmlFor="organize-materials" className="font-medium mb-2 block text-black">
                   Do you currently use any tools to organize your study materials?
                 </label>
                 <div className="flex gap-4">
-                  <label className="flex items-center gap-2">
+                  <label className="flex items-center gap-2 text-black">
                     <input type="radio" name="organize-materials" value="yes" required /> Yes
                   </label>
-                  <label className="flex items-center gap-2">
+                  <label className="flex items-center gap-2 text-black">
                     <input type="radio" name="organize-materials" value="no" required /> No
                   </label>
                 </div>
               </div>
 
               <div>
-                <label htmlFor="productivity-apps" className="font-medium mb-2 block">
+                <label htmlFor="productivity-apps" className="font-medium mb-2 block text-black">
                   Have you used any productivity or study apps before?
                 </label>
                 <div className="flex gap-4">
-                  <label className="flex items-center gap-2">
+                  <label className="flex items-center gap-2 text-black">
                     <input type="radio" name="productivity-apps" value="yes" required /> Yes
                   </label>
-                  <label className="flex items-center gap-2">
+                  <label className="flex items-center gap-2 text-black">
                     <input type="radio" name="productivity-apps" value="no" required /> No
                   </label>
                 </div>
               </div>
 
               <div>
-                <label htmlFor="ai-assistant" className="font-medium mb-2 block">
+                <label htmlFor="ai-assistant" className="font-medium mb-2 block text-black">
                   Do you think an AI assistant could help you with your studies?
                 </label>
                 <div className="flex gap-4">
-                  <label className="flex items-center gap-2">
+                  <label className="flex items-center gap-2 text-black">
                     <input type="radio" name="ai-assistant" value="yes" required /> Yes
                   </label>
-                  <label className="flex items-center gap-2">
+                  <label className="flex items-center gap-2 text-black">
                     <input type="radio" name="ai-assistant" value="no" required /> No
                   </label>
                 </div>
@@ -97,8 +97,8 @@ export default function QuestionsPage() {
               </button>
             </form>
           ) : (
-            <div className="text-center">
-              <h3 className="text-lg font-medium mb-2">Thank you for your responses!</h3>
+            <div className="text-center text-black">
+              <h3 className="text-lg font-medium mb-2 text-black">Thank you for your responses!</h3>
               <p className="text-black">Redirecting to login...</p>
             </div>
           )}

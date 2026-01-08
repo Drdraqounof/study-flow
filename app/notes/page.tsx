@@ -123,6 +123,12 @@ export default function ProjectsPage() {
   };
 
   const createNewProject = () => {
+    console.log('Creating new project with:', {
+      newProjectName,
+      selectedFormat,
+      projects,
+    });
+
     if (newProjectName.trim()) {
       const template = formatTemplates[selectedFormat] || formatTemplates['Blank'];
       const newProject = {
@@ -136,11 +142,16 @@ export default function ProjectsPage() {
           { id: 3, content: template[2] }
         ]
       };
+
+      console.log('New project created:', newProject);
+
       setProjects([newProject, ...projects]);
       setNewProjectName('');
       setShowNewProject(false);
       setSelectedProject(newProject);
       setCurrentPage(1);
+    } else {
+      console.warn('Project name is empty. Cannot create project.');
     }
   };
 
@@ -317,11 +328,11 @@ export default function ProjectsPage() {
             <div className="h-full flex flex-col bg-gray-100">
               {/* Toolbar */}
               <div className="bg-white border-b border-gray-200 px-6 py-3 flex items-center gap-4">
-                <button className="px-3 py-1 text-sm hover:bg-gray-100 rounded">File</button>
-                <button className="px-3 py-1 text-sm hover:bg-gray-100 rounded">Edit</button>
-                <button className="px-3 py-1 text-sm hover:bg-gray-100 rounded">View</button>
-                <button className="px-3 py-1 text-sm hover:bg-gray-100 rounded">Insert</button>
-                <button className="px-3 py-1 text-sm hover:bg-gray-100 rounded">Format</button>
+                <button className="px-3 py-1 text-sm hover:bg-gray-100 rounded text-black">File</button>
+                <button className="px-3 py-1 text-sm hover:bg-gray-100 rounded text-black">Edit</button>
+                <button className="px-3 py-1 text-sm hover:bg-gray-100 rounded text-black">View</button>
+                <button className="px-3 py-1 text-sm hover:bg-gray-100 rounded text-black">Insert</button>
+                <button className="px-3 py-1 text-sm hover:bg-gray-100 rounded text-black">Format</button>
                 
                 <div className="ml-auto flex items-center gap-2">
                   <span className="text-sm text-black">
@@ -464,7 +475,7 @@ export default function ProjectsPage() {
               value={newProjectName}
               onChange={(e) => setNewProjectName(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && createNewProject()}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4 text-black"
               autoFocus
             />
 
