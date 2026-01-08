@@ -14,7 +14,7 @@ export default function QuestionsPage() {
     if (submitted) {
       localStorage.setItem("surveyDone", "true");
       setTimeout(() => {
-        router.push("/login");
+        router.push("/dashboard");
       }, 2000);
     }
   }, [submitted, router]);
@@ -99,7 +99,7 @@ export default function QuestionsPage() {
           ) : (
             <div className="text-center text-black">
               <h3 className="text-lg font-medium mb-2 text-black">Thank you for your responses!</h3>
-              <p className="text-black">Redirecting to login...</p>
+              <p className="text-black">Redirecting to app...</p>
             </div>
           )}
         </div>

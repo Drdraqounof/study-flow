@@ -17,11 +17,12 @@ export default function HomePage() {
             </h1>
           </div>
           <div className="flex items-center gap-4">
-            <button className="px-6 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full font-semibold text-sm hover:shadow-lg hover:scale-105 transition-all">
+            <button className="px-6 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full font-semibold text-sm hover:shadow-lg hover:scale-105 transition-all"
+              onClick={() => window.location.href = '/login'}>
               Get Started
             </button>
             <button
-              onClick={() => window.location.href = '/questions'}
+              onClick={() => window.location.href = '/login'}
               className="px-6 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full font-semibold text-sm hover:shadow-lg hover:scale-105 transition-all"
             >
               Go to Questions
@@ -57,7 +58,7 @@ export default function HomePage() {
           </p>
           
           <button 
-            onClick={() => window.location.href = '/questions'}
+            onClick={() => window.location.href = '/login'}
             className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
           >
             Start Studying Smarter

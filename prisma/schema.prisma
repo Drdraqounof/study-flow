@@ -1,3 +1,12 @@
+// Model for logging onboarding question responses
+model QuestionsLog {
+  id        Int      @id @default(autoincrement())
+  userId    Int?     @map("user_id")
+  question  String
+  answer    String
+  createdAt DateTime @default(now()) @map("created_at")
+  @@map("questions_log")
+}
 // Prisma schema for Neon user_logins table
 // Save as schema.prisma in your project
 

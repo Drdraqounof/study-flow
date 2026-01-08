@@ -51,7 +51,7 @@ export default function LoginPage() {
           localStorage.removeItem('isAdmin');
         }
         setIsLoading(false);
-        router.push('/dashboard');
+        router.push('/questions');
       } catch (err) {
         setIsLoading(false);
         setError('Login failed');
@@ -66,7 +66,8 @@ export default function LoginPage() {
     // Check if survey is done (could use localStorage or a cookie)
     const done = localStorage.getItem("surveyDone");
     setSurveyDone(done === "true");
-    if (!done) {
+    // Only redirect if not already on /questions
+    if (!done && window.location.pathname !== "/questions") {
       router.push("/questions");
     }
   }, [router]);

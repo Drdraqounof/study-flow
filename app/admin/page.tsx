@@ -3,11 +3,19 @@ import { useEffect, useState } from "react";
 import Sidebar from "../../components/Sidebar";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend } from 'recharts';
 
+const onboardingQuestions = [
+  'Do you find it challenging to manage your time effectively?',
+  'Do you currently use any tools to organize your study materials?',
+  'Have you used any productivity or study apps before?',
+  'Do you think an AI assistant could help you with your studies?'
+];
+
 export default function AdminPage() {
   const [visits, setVisits] = useState<number | null>(null);
   const [visitsData, setVisitsData] = useState<any[]>([]);
   const [studyStats, setStudyStats] = useState<{ hours: number; minutes: number } | null>(null);
   const [homeScreenText, setHomeScreenText] = useState<string>("");
+  const [questionsAnalytics, setQuestionsAnalytics] = useState<any>(null);
 
   useEffect(() => {
     // Fetch visits data
@@ -31,6 +39,11 @@ export default function AdminPage() {
       .then(data => {
         setHomeScreenText(data.text);
       });
+
+    // Fetch questions analytics
+    fetch('/api/admin/questions-analytics')
+      .then(res => res.json())
+      .then(data => setQuestionsAnalytics(data));
   }, []);
 
   const CustomTooltip = ({ active, payload }: any) => {
@@ -144,6 +157,29 @@ export default function AdminPage() {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Onboarding Questions Analytics */}
+          <div className="mt-12">
+            <h3 className="text-2xl font-bold mb-4 text-slate-800">Onboarding Questions Analytics</h3>
+            {questionsAnalytics && onboardingQuestions.map((q, idx) => (
+              <div key={idx} className="mb-8">
+                <h4 className="text-lg font-semibold mb-2 text-slate-700">{q}</h4>
+                <ResponsiveContainer width="100%" height={180}>
+                  <BarChart data={[
+                    { name: 'Yes', count: questionsAnalytics[q]?.Yes || 0 },
+                    { name: 'No', count: questionsAnalytics[q]?.No || 0 }
+                  ]}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis allowDecimals={false} />
+                    <Tooltip />
+                    <Legend />
+                    <Bar dataKey="count" fill="#6366f1" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            ))}
           </div>
         </div>
       </main>

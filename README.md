@@ -15,6 +15,10 @@ Students often struggle with managing their time effectively, staying focused, a
 - **User Authentication**: Secure login and signup functionality.
 - **File Uploads**: Upload study materials for AI analysis.
 
+## User Flow Update (Jan 8, 2026)
+
+When users press the button on the home page to go to questions, they are now redirected to the login page. After successfully logging in, users are automatically taken to the questions page. This ensures that only authenticated users can access the questions feature.
+
 ## Future Enhancements
 - **Task Tracker**: A feature to manage tasks and deadlines, which was planned but could not be implemented due to production constraints.
 

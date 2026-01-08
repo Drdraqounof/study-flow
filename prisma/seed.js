@@ -7,6 +7,32 @@ const pool = new Pool({
 });
 
 async function seed() {
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS questions_log (
+        id SERIAL PRIMARY KEY,
+        user_id INTEGER,
+        question TEXT NOT NULL,
+        answer TEXT NOT NULL,
+        created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+      );
+    `);
+
+    // Insert mock onboarding question responses
+    await pool.query(`
+      INSERT INTO questions_log (user_id, question, answer, created_at) VALUES
+        (1, 'Do you find it challenging to manage your time effectively?', 'Yes', NOW() - INTERVAL '2 days'),
+        (2, 'Do you find it challenging to manage your time effectively?', 'No', NOW() - INTERVAL '1 day'),
+        (3, 'Do you find it challenging to manage your time effectively?', 'Yes', NOW() - INTERVAL '3 hours'),
+        (1, 'Do you currently use any tools to organize your study materials?', 'No', NOW() - INTERVAL '2 days'),
+        (2, 'Do you currently use any tools to organize your study materials?', 'Yes', NOW() - INTERVAL '1 day'),
+        (3, 'Do you currently use any tools to organize your study materials?', 'No', NOW() - INTERVAL '3 hours'),
+        (1, 'Have you used any productivity or study apps before?', 'Yes', NOW() - INTERVAL '2 days'),
+        (2, 'Have you used any productivity or study apps before?', 'No', NOW() - INTERVAL '1 day'),
+        (3, 'Have you used any productivity or study apps before?', 'Yes', NOW() - INTERVAL '3 hours'),
+        (1, 'Do you think an AI assistant could help you with your studies?', 'Yes', NOW() - INTERVAL '2 days'),
+        (2, 'Do you think an AI assistant could help you with your studies?', 'No', NOW() - INTERVAL '1 day'),
+        (3, 'Do you think an AI assistant could help you with your studies?', 'Yes', NOW() - INTERVAL '3 hours');
+    `);
   await pool.query(`
     CREATE TABLE IF NOT EXISTS user_logins (
       id SERIAL PRIMARY KEY,
